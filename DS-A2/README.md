@@ -37,7 +37,7 @@ The CS will read the data from a .txt file, and serialise it to .json using the 
 If connection with the AS can't be established, the CS will attempt to reconnect three times before closing.
 
 
-*GETClient.java: <http://localhost:4567> <Station ID>*
+*GETClient.java: <http://localhost:4567> <Station ID> *
 The GET Client attempts to open a socket (Arg 1) and send a 'GET' request to retrive some data based on its Station ID (Arg 2).
 
 The GET Client, upon a successful response (200), will de-serialise the data from .json using the built json serialiser. It will then print the data to the user. Upon a failure response (400), will attempt to resend the GET request 3 times before closing. 

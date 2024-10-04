@@ -29,7 +29,7 @@ The AS will not store more than 20 entries, and will rewrite the oldest data ent
 The AS maintains a lamport clock - which it stores with each data entry, ensuring that even upon restart the lamport value is not lost.
 
 
-*ContentServer.java: <http://localhost:4567> <file_to_path>*
+*ContentServer.java: <http://localhost:4567> file_to_path*
 The Content Server (CS) attempts to open a socket (Arg 1) and send a 'PUT' request to store data (Arg 2) specified from the command line.
 
 The CS will read the data from a .txt file, and serialise it to .json using the built serialiser. The CS, will send the serialised json data to the AS via an open socket. The connection closes once a '201' or '200' code is sent back. Otherwise, upon a '400/500' code, the CS will attempt to re-send the data 3 times before closing.
@@ -37,7 +37,7 @@ The CS will read the data from a .txt file, and serialise it to .json using the 
 If connection with the AS can't be established, the CS will attempt to reconnect three times before closing.
 
 
-*GETClient.java: <http://localhost:4567> <Station ID> *
+*GETClient.java: <http://localhost:4567> Station ID*
 The GET Client attempts to open a socket (Arg 1) and send a 'GET' request to retrive some data based on its Station ID (Arg 2).
 
 The GET Client, upon a successful response (200), will de-serialise the data from .json using the built json serialiser. It will then print the data to the user. Upon a failure response (400), will attempt to resend the GET request 3 times before closing. 

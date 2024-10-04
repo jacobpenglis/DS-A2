@@ -18,7 +18,7 @@ compile:
 run_server:
 	java -cp $(BIN_DIR) AggregationServer
 run_content:
-	java -cp $(BIN_DIR) ContentServer http://localhost:4567 ./data/weather_data1.txt
+	java -cp $(BIN_DIR) ContentServer http://localhost:4567 ./data/weather_data.txt
 run_get:
 	java -cp $(BIN_DIR) GETClient http://localhost:4567 IDS60901
 
